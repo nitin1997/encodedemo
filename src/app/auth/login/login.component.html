@@ -1,0 +1,22 @@
+
+
+
+
+
+<mat-card>
+   
+    <form   (submit)="onLogin(loginForm)" #loginForm="ngForm">
+        <!-- loginform is the reference to the form object managed by angular -->
+        <mat-form-field>
+            <input matInput name="email" ngModel type="email" placeholder="E-mail" #emailInput="ngModel" required email> 
+            <!-- Normal ngModel is used to register this as the input -->
+            <mat-error *ngIf="emailInput.inValid">Please Enter a valid Email</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput name="password" ngModel type="password" placeholder="Password" #passwordInput="ngModel" required> 
+            <mat-error *ngIf="passwordInput">Please Enter a valid Password</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" *ngIf="!isLoading">LogIn</button>
+       
+    </form>
+</mat-card>

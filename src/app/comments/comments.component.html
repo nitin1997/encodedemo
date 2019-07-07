@@ -1,0 +1,10 @@
+<mat-card>
+    <form (submit)="onAddComment(commentForm)" #commentForm="ngForm">
+        <mat-form-field>
+            <textarea matInput rows="6" name="comment" ngModel required #comment="ngModel">
+        </textarea>
+            <mat-error *ngIf="comment.invalid">Please Enter Comment</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+</mat-card>

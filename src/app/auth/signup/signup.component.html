@@ -1,0 +1,18 @@
+<mat-card>
+  <form  (submit)="onSignup(SignupForm)" #SignupForm="ngForm">
+    <!-- formGroup is a directive which that an boject which we have created in typescript file  -->
+    <mat-form-field>
+      <input matInput name="name" ngModel type="text" placeholder="Name" #nameInput="ngModel" required>
+      <mat-error *ngIf="nameInput.inValid">Please Enter a Name</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="email" ngModel type="email" placeholder="E-mail" #emailInput="ngModel" required email>
+      <mat-error *ngIf="emailInput.inValid">Please Enter a valid Email</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="password" ngModel type="password" placeholder="Password" #passwordInput="ngModel" required>
+      <mat-error *ngIf="passwordInput">Please Enter a valid Password</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" *ngIf="!isLoading">Signup</button>
+  </form>
+</mat-card>

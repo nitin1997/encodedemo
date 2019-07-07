@@ -1,0 +1,15 @@
+<mat-card>
+    <form (submit)="onAddQuestion(postForm)" #postForm="ngForm">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="TITLE" name="title" ngModel required #title="ngModel">
+            <mat-error *ngIf="title.invalid">Please Enter Question Title</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <textarea matInput rows="6" name="question" ngModel required #content="ngModel">
+        </textarea>
+            <mat-error *ngIf="content.invalid">Please Enter Question</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Save Question</button>
+    </form>
+</mat-card>
